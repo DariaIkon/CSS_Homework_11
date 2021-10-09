@@ -17,9 +17,12 @@
 body {
   margin: 0;
 }
-
 /*header*/
 
+#burger_menu,
+#header_close {
+  display: none;
+}
 #header {
   background: #ffffff;
 }
@@ -28,24 +31,22 @@ body {
   border-bottom: 1px solid #ebe1cf;
 }
 #header_logo_container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 50px 0;
 }
-#logo {
+.logo {
   font-size: 30px;
   font-family: "YesevaOne Regular", sans-serif;
   color: rgb(153, 110, 28);
   text-transform: uppercase;
   line-height: 1.833;
 }
-#logo_dscrptn {
+.logo_dscrptn {
   font-size: 11px;
   font-family: "Muller Regular", sans-serif;
   color: rgb(153, 110, 28);
   text-transform: uppercase;
-
-  margin-top: 10px;
   text-align: center;
 }
 #header_menu_wrapper {
@@ -53,7 +54,7 @@ body {
   padding: 30px 0;
 }
 #header_menu_container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 #header_menu_wrapper a {
@@ -88,14 +89,14 @@ body {
   background: #ffffff;
 }
 #favorites_container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 130px 0 130px 0;
 }
 #favorites_main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: 583px 1fr;
+  grid-template-rows: 125px 310px;
 }
 #favorites_container h1 {
   font-family: "YesevaOne Regular", sans-serif;
@@ -105,7 +106,7 @@ body {
   text-align: left;
 
   margin: 0;
-  width: 573px;
+  max-width: 573px;
 }
 #favorites_dscrptn {
   font-size: 15px;
@@ -113,12 +114,7 @@ body {
   color: rgb(153, 110, 28);
   line-height: 1.333;
   text-align: left;
-
-  margin-top: 50px;
-  width: 479px;
-}
-#favorites_list {
-  grid-column: 1 / 2;
+  align-self: flex-end;
 }
 .favorites_item {
   display: inline-block;
@@ -148,14 +144,17 @@ body {
   line-height: 1.333;
   text-align: left;
 
-  width: 275px;
+  max-width: 275px;
   margin-top: 13px;
 }
 #favorites_photos {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  align-self: flex-end;
 }
-#favorites_photos div {
+#favorites_photos img {
+  margin-left: 24px;
 }
 
 /*happiness_couple*/
@@ -164,7 +163,7 @@ body {
   background: #faf7f2;
 }
 #happiness_couple_container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 120px 0 80px 0;
   font-size: 0;
@@ -179,19 +178,15 @@ body {
   margin: 0;
 }
 #happiness_couple_list {
-  margin-top: 60px;
   display: grid;
-  grid-column-gap: 24px;
   grid-template-columns: repeat(auto-fill, 282px);
-}
-.happiness_couple_item {
-}
-.happiness_couple_item:not(:last-child) {
-}
+  grid-column-gap: 24px;
 
+  margin-top: 60px;
+}
 .happiness_couple_name {
   font-size: 18px;
-  font-family: "MullerMediumItalic";
+  font-family: "Muller Regular";
   font-style: italic;
   color: rgb(197, 182, 152);
   line-height: 1.111;
@@ -199,25 +194,22 @@ body {
 
   margin-top: 20px;
 }
-
 /*footer*/
-
 #footer {
   background: #f1d2bd;
 }
 #footer_container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 30px 0 30px 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
-/* #footer_social {
-} */
+#footer_social {
+  justify-self: flex-start;
+}
 #footer_social a {
-  display: inline-block;
-  vertical-align: middle;
   font-size: 0;
   text-decoration: none;
 }
@@ -231,15 +223,13 @@ body {
   fill: #644304;
 }
 #footer_logo {
-  justify-self: self-start;
-  margin: auto;
   text-decoration: none;
+  margin: 0 auto;
 }
 #footer_info {
-  justify-self: self-end;
+  justify-self: flex-end;
   font-size: 11px;
   font-family: "Muller Regular", sans-serif;
   font-style: italic;
   color: rgb(153, 110, 28);
-  line-height: 5;
 }

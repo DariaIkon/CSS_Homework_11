@@ -7,18 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS_Homework_11</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./adaptive.css">
 </head>
 
 <body>
     <div id="header">
+        <div id="header_container" class="container">
+            <div id="burger_menu">
+                <svg id="Layer_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m464.883 64.267h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z" />
+                    <path
+                        d="m464.883 208.867h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z" />
+                    <path
+                        d="m464.883 353.467h-417.766c-25.98 0-47.117 21.137-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.012-21.137-47.149-47.117-47.149z" />
+                </svg>
+            </div>
         <div id="header_logo_wrapper">
-            <div id="header_logo_container">
-                <div id="logo">happy moments </div>
-                <div id="logo_dscrptn">лучшее свадебное агентство</div>
+            <div id="header_logo_container" class="container">
+                <div class="logo" id="header_logo" >happy moments </div>
+                <div class="logo_dscrptn" id="header_logo_dscrptn">лучшее свадебное агентство</div>
             </div>
         </div>
         <div id="header_menu_wrapper">
-            <div id="header_menu_container">
+            <div id="header_menu_container" class="container">
                 <a class="header_menu_item" href="#">о нас</a>
                 <a class="header_menu_item" href="#">услуги</a>
                 <a class="header_menu_item" href="#">фотогалерея</a>
@@ -29,7 +42,7 @@
     </div>
     <div id="main_photo"></div>
     <div id="favorites">
-        <div id="favorites_container">
+        <div id="favorites_container" class="container">
             <!-- <div id="favorites_info"> -->
             <h1>Мы организуем свадьбу вашей мечты!</h1>
             <div id="favorites_main">
@@ -90,40 +103,35 @@
                     </div>
                 </div>
                 <div id="favorites_photos">
-                    <div>
                         <img src="./images/photo_1.png" alt="">
-                    </div>
-                    <div>
                         <img src="./images/photo_2.png" alt="">
-                    </div>
                 </div>
-            </div>
-            
+            </div>    
         </div>
     </div>
     <div id="happiness_couple">
-        <div id="happiness_couple_container">
+        <div id="happiness_couple_container" class="container">
             <h2>Наши счастливые пары</h2>
             <div id="happiness_couple_list">
-                <div class="happiness_couple_item happiness_couple_item_first">
+                <div class="happiness_couple_item">
                     <div class="happiness_couple_photos">
                         <img src="./images/David_Irina.png" alt="">
                     </div>
                     <div class="happiness_couple_name">Давид и Ирина</div>
                 </div>
-                <div class="happiness_couple_item happiness_couple_item_second">
+                <div class="happiness_couple_item">
                     <div class="happiness_couple_photos">
                         <img src="./images/Mihail_Maria.png" alt="">
                     </div>
                     <div class="happiness_couple_name">Михаил и Мария</div>
                 </div>
-                <div class="happiness_couple_item happiness_couple_item_third">
+                <div class="happiness_couple_item">
                     <div class="happiness_couple_photos">
                         <img src="./images/Edward_Karina.png" alt="">
                     </div>
                     <div class="happiness_couple_name">Эдвард и Карина</div>
                 </div>
-                <div class="happiness_couple_item happiness_couple_item_forth">
+                <div class="happiness_couple_item">
                     <div class="happiness_couple_photos">
                         <img src="./images/Aslan_Eva.png" alt="">
                     </div>
@@ -133,7 +141,7 @@
         </div>
     </div>
     <div id="footer">
-        <div id="footer_container">
+        <div id="footer_container" class="container">
             <div id="footer_social">
                 <a href="#">
                     <svg viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg"
@@ -183,12 +191,23 @@
                 </a>
             </div>
             <a id="footer_logo" href="#">
-                <div id="logo">happy moments</div>
-                <div id="logo_dscrptn">лучшее свадебное агентство</div>
+                <div class="logo">happy moments</div>
+                <div class="logo_dscrptn">лучшее свадебное агентство</div>
             </a>
             <div id="footer_info">Все права защищены, 2020</div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('burger_menu').onclick = function () {
+            document.getElementById('header_menu_wrapper').classList.add('open');
+        }
+        document.querySelectorAll('#header_menu_wrapper > *').forEach((item) => {
+            item.onclick = () => {
+                document.getElementById('header_menu_wrapper').classList.remove('open');
+            }
+        })
+    </script>
 </body>
 
 </html>
