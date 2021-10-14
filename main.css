@@ -85,36 +85,43 @@ body {
 
 /*favorites*/
 
-#favorites {
-  background: #ffffff;
-}
 #favorites_container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 130px 0 130px 0;
-}
-#favorites_main {
+
   display: grid;
-  grid-template-columns: 583px 1fr;
-  grid-template-rows: 125px 310px;
+  grid-template-areas:
+    "title title title"
+    "description photo_first photo_second"
+    "list_item photo_first photo_second"
+    "list_item photo_first photo_second";
+  grid-template-columns: 583px 1fr 1fr;
+  grid-template-rows: auto auto 1fr 1fr;
 }
 #favorites_container h1 {
+  grid-area: title;
+
   font-family: "YesevaOne Regular", sans-serif;
   font-size: 45px;
   color: rgb(153, 110, 28);
   line-height: 1.222;
   text-align: left;
-
   margin: 0;
   max-width: 573px;
 }
 #favorites_dscrptn {
+  grid-area: description;
+  padding-top: 50px;
   font-size: 15px;
   font-family: "Muller Regular", sans-serif;
   color: rgb(153, 110, 28);
   line-height: 1.333;
   text-align: left;
   align-self: flex-end;
+}
+#favorites_list {
+  grid-area: list_item;
 }
 .favorites_item {
   display: inline-block;
@@ -135,7 +142,7 @@ body {
   vertical-align: middle;
 }
 .favorites_item_heading {
-  margin-top: 50px;
+  margin-top: 58px;
 }
 .favorites_item_text {
   font-size: 15px;
@@ -147,14 +154,13 @@ body {
   max-width: 275px;
   margin-top: 13px;
 }
-#favorites_photos {
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  align-self: flex-end;
+#favorites_photo_first {
+  grid-area: photo_first;
+  justify-self: flex-end;
 }
-#favorites_photos img {
-  margin-left: 24px;
+#favorites_photo_second {
+  grid-area: photo_second;
+  justify-self: flex-end;
 }
 
 /*happiness_couple*/

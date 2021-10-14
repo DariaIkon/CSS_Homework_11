@@ -6,41 +6,56 @@
   }
 
   /* favorites */
-  #favorites_container h1 {
-    text-align: center;
-    /* align-self: center; */
-    max-width: 573px;
-    margin: 0 auto;
+  #favorites_container {
+    padding-left: 15px;
+    padding-right: 15px;
+    grid-template-areas:
+      "title title"
+      "description description"
+      "list_item list_item"
+      "photo_first photo_second";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
   }
-  #favorites_main {
-    grid-template-columns: 1fr;
-    grid-template-rows: 125px 362px 1fr;
+  #favorites_container h1 {
+    margin: 0 auto;
+    text-align: center;
   }
   #favorites_dscrptn {
-    order: 1;
-    max-width: 578px;
-    margin: 0 auto;
     text-align: center;
+    max-width: 559px;
+    margin: auto;
   }
   #favorites_list {
-    order: 2;
-    max-width: 583px;
-    margin: 0 auto;
+    max-width: 588px;
+    margin: auto;
+    margin-bottom: 58px;
   }
-  #favorites_photos {
-    order: 3;
-    grid-row-start: 3;
-    grid-column-start: 1;
-    margin: 0 auto;
+  .favorites_item_heading {
+    text-align: center;
+  }
+  .favorites_item_text {
+    text-align: center;
+    margin-left: 12px;
+  }
+  #favorites_photo_first {
+    margin-right: 12px;
+  }
+  #favorites_photo_second {
+    justify-self: flex-start;
+    margin-left: 12px;
   }
 
   /* happiness */
   #happiness_couple_list {
+    max-width: 600px;
     justify-content: center;
+    margin: 0 auto;
     grid-gap: 40px 24px;
   }
   #happiness_couple_container h2 {
     text-align: center;
+    margin-bottom: 60px;
   }
 
   /*footer*/
@@ -61,12 +76,33 @@
     padding-left: 15px;
     padding-right: 15px;
   }
-
   /* footer */
   .logo {
     font-size: 27px;
   }
-
+  /* 621 */
+  @media screen and (max-width: 620px) {
+    /* favorites */
+    #favorites_container {
+      grid-template-areas:
+        "title"
+        "description"
+        "list_item"
+        "photo_first"
+        "photo_second";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto 1fr 1fr;
+    }
+    #favorites_photo_first,
+    #favorites_photo_second {
+      margin-right: 0;
+      margin-left: 0;
+      justify-self: center;
+    }
+    #favorites_photo_second {
+      margin-bottom: 12px;
+    }
+  }
   /* 425 - 767 */
   @media screen and (max-width: 767px) {
     /* header  */
@@ -75,6 +111,9 @@
     }
     #header_menu_wrapper a:not(:last-child) {
       margin-right: 30px;
+    }
+    #header_menu_wrapper a {
+      font-size: 11px;
     }
 
     /* favorites */
@@ -90,12 +129,9 @@
     #favorites_list {
       text-align: center;
     }
-    #favorites_main {
-      grid-template-columns: 1fr;
-      grid-template-rows: 125px 1fr 1fr;
-    }
-    #favorites_photos {
-      text-align: center;
+    .favorites_item_text,
+    #favorites_dscrptn {
+      font-size: 14px;
     }
 
     /* happiness */
@@ -111,18 +147,18 @@
 
     /* footer  */
     #footer_container {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-row-gap: 10px;
     }
     #footer_info {
-      order: 2;
+      order: 3;
       justify-self: center;
     }
     #footer_social {
-      grid-row-start: 1;
-      grid-row-end: 2;
-      grid-column-end: 3;
-      justify-self: center;
-      order: 3;
+      margin: 0 auto;
+      align-self: self-end;
+      order: 2;
     }
     #footer_logo {
       order: 1;
@@ -188,5 +224,15 @@
     position: absolute;
     top: 44px;
     left: 320px;
+  }
+  #favorites_container h1 {
+    font-size: 30px;
+  }
+  .favorites_item_text,
+  #favorites_dscrptn {
+    font-size: 13px;
+  }
+  #happiness_couple_container h2 {
+    font-size: 30px;
   }
 }
